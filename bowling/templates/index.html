@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bowling</title>
+</head>
+<body>
+
+<form action="{{ url_for('bowling_data') }}" , method="post">
+  First name:<br>
+  <input type="text" name="firstname">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname">
+  <br><br>
+  <input type="submit" value="Press Button">
+</form>
+
+<p>Enter the name of the person Bowling</p>
+
+
+</body>
+</html>

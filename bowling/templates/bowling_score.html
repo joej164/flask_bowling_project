@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bowling Score</title>
+</head>
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+<body>
+<h1>Bowling Score for {{ firstname }} {{ lastname }}</h1>
+ <table style="width:100%">
+  <tr>
+    {% for frame in score %}
+      <th>Frame {{ frame }} </th>
+    {% endfor %}
+  </tr>
+  <tr>
+    {% for frame_score in score.values() %}
+      <td>{{ frame_score }}</td>
+    {% endfor %}
+  </tr>
+</table>
+
+Total Score is: {{ total_score }}
+<br>
+<br>
+<form action="{{ url_for('update_score') }}" , method="post">
+  Enter the score for Frame Number: {{ frame_number }}<br>
+  <input type="text" name="input_score">
+  <br>
+  <input type="submit" value="Press Button">
+</form>
+
+</body>
+</html>
